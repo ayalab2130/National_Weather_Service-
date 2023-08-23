@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\styles\StyleSheet.css\**" />
+    <Content Remove="Pages\styles\StyleSheet.css\**" />
+    <EmbeddedResource Remove="Pages\styles\StyleSheet.css\**" />
+    <None Remove="Pages\styles\StyleSheet.css\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Negotiate" Version="6.0.1" />
+  </ItemGroup>
+
+</Project>

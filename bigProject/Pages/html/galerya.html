@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="../styles/newBase.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #a7dccc;
+        }
+        video{
+            margin:0% 20% 10% 0%;
+            width:55%;
+            height:25%;
+        }
+        .anan1 {
+            display:flex;
+            position:fixed;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s;
+            animation-iteration-count: 10;
+            animation-iteration-count:infinite;
+        }
+
+        @keyframes example {
+            0% {
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                left: 200px;
+                top: 0px;
+            }
+
+            50% {
+                left: 200px;
+                top: 0px;
+            }
+
+            75% {
+                left: 0px;
+                top: 0px;
+            }
+
+            100% {
+                left: 0px;
+                top: 0px;
+            }
+        }
+        @media screen and (max-width:520px) {
+            .anan1 {
+                width:50px; 
+                height:50px ;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <header class="my_header">
+            <!--<div id="logo"><img src="../../images/logo.png" height="52" /></div>-->
+            <img id="logo" src="../../images/logo.png" height="52" />
+
+            <a class="bottom home" href="../html/home.html" rel="htmlpage">עמוד-הבית</a>
+            <a class="bottom taz" href="../html/tachazit.html" rel="htmlpage">תחזית</a>
+            <div class="moreOpen">
+                <button class="open">העשרה</button>
+                <div class="moreOpen-content">
+                    <a href="../html/waves.html" rel="htmlpage" target="_blank">אטלס עננים</a>
+                    <a href="../html/q.html" rel="htmlpage" target="_blank">שאלות ותשובות</a>
+                </div>
+            </div>
+            <a class="bottom galerya" href="../html/galerya.html" rel="htmlpage" target="_blank">גלריה</a>
+            <div id="space" style="width:40%"></div>
+            <a href="../html/warning.html" class="warnings" rel="htmlpage"><img src="../../images/warnings.png" height="62" width="50" /></a>
+            <a class="bottom not" href="../html/warning.html" rel="htmlpage" target="_blank">אזהרות</a>
+            <a class="picturesWarn" href="../html/warning.html" rel="htmlpage" target="_blank"><img src="../../images/picturesWarn.png" height="37" /></a>
+
+        </header>
+
+        <div class="anan1">
+            <img src="../../images/anan1.jpg"  />
+        </div>
+        <video width="400" controls>
+            <source src="../video/1.mp4" type="video/mp4">
+
+        </video>
+
+
+
+
+        <footer id="down">
+            <div id="imgIsrael"><img id="israel" src="../../images/Israel.jpg" width="80" /></div>
+
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <!--<a href="../html/details.html" target="_blank">צור קשר</a>-->
+                <a href="#" class="f Sign_up" onclick="document.getElementById('id01').style.display='block'" style="width:auto">צור קשר</a>
+                <!--<a href="../html/details.html" target="_blank">ליצירת חשבון חדש</a>-->
+                <a href="#" class="f Sign_up" onclick="document.getElementById('id01').style.display='block'" style="width:auto">ליצירת חשבון חדש</a>
+                <!--<button class="f Sign_up" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">הירשם</abutton>-->
+                <a href="#" target="_blank">map</a>
+            </div>
+
+
+            <div id="opening"><span style="font-size: 30px; color: #325070;" onclick="openNav()">&#9776; open</span></div>
+
+
+
+            <div id="id01" class="modal">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <form class="modal-content" action="/action_page.php">
+                    <div class="container">
+                        <h1>הירשם</h1>
+                        <p>אנא מלא טופס זה כדי ליצור חשבון</p>
+                        <hr>
+                        <label for="email"><b>אימייל</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" required>
+
+                        <label for="psw"><b>סיסמה</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+
+                        <label for="psw-repeat"><b>חזור על הסיסמה</b></label>
+                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> זכור אותי
+                        </label>
+
+                        <p>על ידי יצירת חשבון אתה מאשר קבלת עידכונים שוטפים למייל</p>
+
+                        <div class="clearfix">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="f cancelbtn ">לביטול</button>
+                            <button type="submit" class="f signupbtn ">הירשם</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+
+
+
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById('id01');
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+
+
+
+            <script>
+                function openNav() {
+                    document.getElementById("mySidenav").style.width = "250px";
+                    document.getElementById("main").style.marginLeft = "250px";
+                    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+                }
+
+                function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("main").style.marginLeft = "0";
+                    document.body.style.backgroundColor = "white";
+                }
+            </script>
+
+        </footer>
+    </div>
+
+</body>
+</html>

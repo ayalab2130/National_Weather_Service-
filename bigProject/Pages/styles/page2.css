@@ -1,0 +1,119 @@
+﻿
+#conteiner {
+    display: grid;
+    background-color: white;
+    grid-template-areas: "header"
+        "imgK"
+        "father"
+        "footer";
+}
+
+.my_header {
+    grid-area: header;
+}
+
+#father {
+    grid-area: father;
+    margin-right: 10%;
+    margin-left: 10%;
+    text-align: justify;
+    margin-top: 5%;
+}
+
+#down {
+    grid-area: footer;
+}
+
+#father {
+    display: grid;
+    grid-template-areas: "img1"
+        "q1"
+        "img2"
+        "q2"
+        "img3"
+        "q3"
+        "img4"
+        "q4"
+        "img5"
+        "q5";
+}
+
+.pQuestion1 {
+    /* margin-bottom: 0px;*/
+    grid-area: q1;
+}
+
+.pQuestion2 {
+    grid-area: q2;
+}
+
+.pQuestion3 {
+    grid-area: q3;
+}
+
+.pQuestion4 {
+    grid-area: q4;
+}
+
+.pQuestion5 {
+    grid-area: q5;
+}
+
+.qImg1 {
+    grid-area: img1;
+}
+
+.qImg2 {
+    grid-area: img2;
+}
+
+.qImg3 {
+    grid-area: img3;
+}
+
+.qImg4 {
+    grid-area: img4;
+}
+
+.qImg5 {
+    grid-area: img5;
+}
+
+.h {
+    color: #36638d;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+p {
+    margin-bottom: 3%;
+}
+
+.image {
+    background-image: url('../../images/answers1.jfif');
+    background-repeat: no-repeat;
+    /* background-attachment: fixed;*/
+    background-size: 100% 100%;
+    height: 500px;
+    vertical-align: middle;
+}
+
+.image {
+    grid-area: image;
+}
+
+.img_koteret .koteret {
+    /* position: absolute;*/
+    bottom: 0;
+    background-color: #325070;
+    opacity: 0.75;
+    color: #f1f1f1;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.img_koteret {
+    grid-area: imgK;
+}

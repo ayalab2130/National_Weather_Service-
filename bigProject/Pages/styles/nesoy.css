@@ -1,0 +1,156 @@
+﻿body {
+    direction: rtl;
+    background-color: #baf1e3;
+    transition: background-color .5s;
+    font-family: Arial,sans-serif;
+    margin:0px;
+    margin:initial;
+}
+
+.my_header {
+    display: flex;
+    background-color: #325070;
+    font-family: Arial,sans-serif;
+    padding:5px;
+}
+
+#logo {
+    margin-left: 30px;
+}
+
+.moreOpen {
+    position: relative;
+    display: inline-block;
+}
+
+.moreOpen-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .moreOpen-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        background-color: #325070;
+        font-size: 18px;
+    }
+
+        .moreOpen-content a:hover {
+            background-color: white;
+            text-decoration: underline;
+            color: black;
+        }
+
+.moreOpen:hover .moreOpen-content {
+    display: block;
+}
+
+.open {
+    color: white;
+    text-decoration: none;
+    background-color: #325070;
+    border: none;
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 1px;
+    padding-left: 16px;
+}
+
+.moreOpen:hover .open {
+    color: white;
+    text-decoration: underline;
+}
+
+a.bottom:link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-left: 10px;
+    font-family: Arial,sans-serif;
+}
+
+a.bottom:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a.bottom:hover {
+    text-decoration: underline;
+}
+
+#space {
+    width: 650px;
+}
+
+.picturesWarn {
+    padding-left: 35px;
+    padding-top: 11px;
+    padding-bottom: 1px;
+    padding-right: 20px;
+    display: block;
+}
+
+#down {
+    padding: 8% 0px 5% 0px;
+    background-image: url('../../images/sky.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-top: solid;
+    border-color: #18398f;
+    height: 150px;
+}
+
+
+    #down #imgIsrael {
+        margin-right: 46%;
+    }
+
+
+
+
+
+
+
+/*טופס הרשמה
+*/
+
+/*/* Full-width input fields */
+input[type=text], input[type=password] {
+    /*width: 100%;*/
+    width: 98%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+
+    /* Add a background color when the inputs get focus */
+    input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+
+/* Set a style for all buttons */
+.f{
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}

@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>תחזית | השרות המטאורולוגי</title>
+    <link href="../styles/newBase.css" rel="stylesheet" />
+    <link href="../styles/tachazit.css" rel="stylesheet" />
+
+
+
+
+    <script>
+        function magnify(imgID, zoom) {
+            var img, glass, w, h, bw;
+            img = document.getElementById(imgID);
+            /*create magnifier glass:*/
+            glass = document.createElement("DIV");
+            glass.setAttribute("class", "img-magnifier-glass");
+            /*insert magnifier glass:*/
+            img.parentElement.insertBefore(glass, img);
+            /*set background properties for the magnifier glass:*/
+            glass.style.backgroundImage = "url('" + img.src + "')";
+            glass.style.backgroundRepeat = "no-repeat";
+            glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+            bw = 3;
+            w = glass.offsetWidth / 2;
+            h = glass.offsetHeight / 2;
+            /*execute a function when someone moves the magnifier glass over the image:*/
+            glass.addEventListener("mousemove", moveMagnifier);
+            img.addEventListener("mousemove", moveMagnifier);
+            /*and also for touch screens:*/
+            glass.addEventListener("touchmove", moveMagnifier);
+            img.addEventListener("touchmove", moveMagnifier);
+            function moveMagnifier(e) {
+                var pos, x, y;
+                /*prevent any other actions that may occur when moving over the image*/
+                e.preventDefault();
+                /*get the cursor's x and y positions:*/
+                pos = getCursorPos(e);
+                x = pos.x;
+                y = pos.y;
+                /*prevent the magnifier glass from being positioned outside the image:*/
+                if (x > img.width - (w / zoom)) { x = img.width - (w / zoom); }
+                if (x < w / zoom) { x = w / zoom; }
+                if (y > img.height - (h / zoom)) { y = img.height - (h / zoom); }
+                if (y < h / zoom) { y = h / zoom; }
+                /*set the position of the magnifier glass:*/
+                glass.style.left = (x - w) + "px";
+                glass.style.top = (y - h) + "px";
+                /*display what the magnifier glass "sees":*/
+                glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+            }
+            function getCursorPos(e) {
+                var a, x = 0, y = 0;
+                e = e || window.event;
+                /*get the x and y positions of the image:*/
+                a = img.getBoundingClientRect();
+                /*calculate the cursor's x and y coordinates, relative to the image:*/
+                x = e.pageX - a.left;
+                y = e.pageY - a.top;
+                /*consider any page scrolling:*/
+                x = x - window.pageXOffset;
+                y = y - window.pageYOffset;
+                return { x: x, y: y };
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="my_header">
+        <!--<div class="right">-->
+        <div id="logo">          <img src="../../images/logo.png" height="52" /></div>
+        <a class="bottom home" href="../html/home.html" rel="htmlpage">עמוד-הבית</a>
+        <a class="bottom taz" href="../html/tachazit.html" rel="htmlpage" target="_blank">תחזית</a>
+        <div class="moreOpen">
+            <button class="open">העשרה</button>
+            <div class="moreOpen-content">
+                <a href="../html/waves.html" rel="htmlpage" target="_blank">אטלס עננים</a>
+                <a href="../html/q.html" rel="htmlpage" target="_blank">שאלות ותשובות</a>
+            </div>
+        </div>
+        <a class="bottom galerya" href="../html/galerya.html" rel="htmlpage" target="_blank">גלריה</a>
+        <div id="space"></div>
+        <!--</div>-->
+        <!--<div class="left">-->
+        <a href="../html/warning.html" class="warnings" rel="htmlpage"><img src="../../images/warnings.png" height="62" width="50" /></a>
+        <a class="bottom not" href="../html/warning.html" rel="htmlpage" target="_blank">אזהרות</a>
+        <a class="picturesWarn" href="../html/warning.html" rel="htmlpage" target="_blank"><img src="../../images/picturesWarn.png" height="37" /></a>
+        <!--</div>-->
+    </header>
+
+
+
+
+
+
+
+    <div class="mazeget">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img class="imgMazeget" src="../../images/shelegjfif.jfif" style="width:100% ">
+                <div class="text">שלגים</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img class="imgMazeget" src="../../images/barak.jfif" style="width:100%">
+                <div class="text">סופת ברקים</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img class="imgMazeget" src="../../images/goodrain.jpg" style="width:100%">
+                <div class="text">גשם יורד</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+
+    </div>
+    <div class="img-magnifier-container">
+        <img id="myimage" src="../../images/map.png"/>
+        <img id="table1" src="../../images/image (1).png" />
+    </div>
+
+
+    <script>
+        /* Initiate Magnify Function
+        with the id of the image, and the strength of the magnifier glass:*/
+        magnify("myimage", 3);
+    </script>
+
+
+
+
+
+
+    <footer id="down">
+        <div id="imgIsrael"><img id="israel" src="../../images/Israel.jpg" width="80" /></div>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <!--<a href="../html/details.html" target="_blank">צור קשר</a>-->
+            <a href="#" class="f Sign_up" onclick="document.getElementById('id01').style.display='block'" style="width:auto">צור קשר</a>
+            <!--<a href="../html/details.html" target="_blank">ליצירת חשבון חדש</a>-->
+            <a href="#" class="f Sign_up" onclick="document.getElementById('id01').style.display='block'" style="width:auto">ליצירת חשבון חדש</a>
+            <!--<button class="f Sign_up" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">הירשם</abutton>-->
+            <a href="#" target="_blank">map</a>
+        </div>
+
+
+        <div id="opening"><span style="font-size: 30px; color: #325070;" onclick="openNav()">&#9776; open</span></div>
+
+
+
+        <div id="id01" class="modal">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <form class="modal-content" action="/action_page.php">
+                <div class="container">
+                    <h1>הירשם</h1>
+                    <p>אנא מלא טופס זה כדי ליצור חשבון</p>
+                    <hr>
+                    <label for="email"><b>אימייל</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+
+                    <label for="psw"><b>סיסמה</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <label for="psw-repeat"><b>חזור על הסיסמה</b></label>
+                    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> זכור אותי
+                    </label>
+
+                    <p>על ידי יצירת חשבון אתה מאשר קבלת עידכונים שוטפים למייל</p>
+
+                    <div class="clearfix">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="f cancelbtn ">לביטול</button>
+                        <button type="submit" class="f signupbtn ">הירשם</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+
+
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                document.body.style.backgroundColor = "white";
+            }
+        </script>
+
+    </footer>
+
+
+</body>
+</html>
